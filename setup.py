@@ -28,7 +28,7 @@ setup(
         'openpyxl==2.4.0',
         'psycopg2==2.6.2',
         'PyYAML==3.12',
-        'django-moj-irat'
+        'django-moj-irat==4d54b86b1cb574fe787ba0fb8a992cf352f8eba6'
     ],
     dependency_links=[
         "git+ssh://git@//github.com/ministryofjustice/django-moj-irat.git@4d54b86b1cb574fe787ba0fb8a992cf352f8eba6"

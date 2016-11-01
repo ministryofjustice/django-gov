@@ -29,7 +29,6 @@ setup(
         'django-rest-swagger==2.0.7',
         'djangorestframework==3.5.0',
         'openpyxl==2.4.0',
-        'psycopg2==2.6.2',
         'PyYAML==3.12',
         'moj_irat>=0.3'
     ],

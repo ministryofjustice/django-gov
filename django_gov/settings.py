@@ -8,7 +8,8 @@ REST_FRAMEWORK = {
 API_VERSION = 'v1'
 
 SWAGGER_SETTINGS = {
-    'APIS_SORTER': 'alpha'
+    'APIS_SORTER': 'alpha',
+    'DOC_EXPANSION': 'list'
 }
 
 PING_JSON_KEYS = {

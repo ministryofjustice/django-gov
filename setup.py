@@ -22,14 +22,14 @@ setup(
         "https://github.com/ministryofjustice/django-moj-irat/tarball/master#egg=moj_irat-0.3"
     ],
     install_requires=[
-        'Django==1.10.2',
-        'django-cors-headers==1.2.2',
-        'django-extended-choices==1.0.7',
-        'django-filter==0.15.2',
-        'django-rest-swagger==2.0.7',
-        'djangorestframework==3.5.0',
-        'openpyxl==2.4.0',
-        'PyYAML==3.12',
+        'Django>=1.10.2',
+        'django-cors-headers>=1.2.2',
+        'django-extended-choices>=1.0.7',
+        'django-filter>=0.15.2',
+        'django-rest-swagger>=2.0.7',
+        'djangorestframework>=3.5.0',
+        'openpyxl>=2.4.0',
+        'PyYAML>=3.12',
         'moj_irat>=0.3'
     ],
     license='MIT License',

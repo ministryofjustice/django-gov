@@ -18,9 +18,6 @@ setup(
     author_email='josh.rowe@digital.justice.gov.uk',
     packages=find_packages(exclude=['tests']),
     include_package_data=True,
-    dependency_links=[
-        "https://github.com/ministryofjustice/django-moj-irat/tarball/master#egg=moj_irat-0.3"
-    ],
     install_requires=[
         'Django>=1.10.2',
         'django-cors-headers>=1.2.2',
@@ -30,7 +27,7 @@ setup(
         'djangorestframework>=3.5.0',
         'openpyxl>=2.4.0',
         'PyYAML>=3.12',
-        'moj_irat>=0.3'
+        'django-moj-irat>=0.3'
     ],
     license='MIT License',
     classifiers=[

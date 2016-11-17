@@ -27,7 +27,8 @@ setup(
         'djangorestframework>=3.5.0',
         'openpyxl>=2.4.0',
         'PyYAML>=3.12',
-        'django-moj-irat>=0.3'
+        'django-moj-irat>=0.3',
+        'requests>=2.11.1'
     ],
     license='MIT License',
     classifiers=[

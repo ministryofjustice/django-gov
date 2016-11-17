@@ -23,11 +23,12 @@ setup(
         'django-cors-headers>=1.2.2',
         'django-extended-choices>=1.0.7',
         'django-filter>=0.15.2',
+        'django-moj-irat>=0.3',
         'django-rest-swagger>=2.0.7',
         'djangorestframework>=3.5.0',
+        'flake8>=3.2.0',
         'openpyxl>=2.4.0',
         'PyYAML>=3.12',
-        'django-moj-irat>=0.3',
         'requests>=2.11.1'
     ],
     license='MIT License',

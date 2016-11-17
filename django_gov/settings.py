@@ -26,3 +26,5 @@ HEALTHCHECKS = [
 AUTODISCOVER_HEALTHCHECKS = True
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+TEST_RUNNER = 'django_gov.tests.runner.GovDiscoverRunner'

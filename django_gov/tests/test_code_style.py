@@ -6,8 +6,8 @@ import sys
 
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
-from flake8.engine import get_style_guide
 from django.test import TestCase
+from flake8.api.legacy import get_style_guide
 
 
 class CodeStyleTestCase(TestCase):

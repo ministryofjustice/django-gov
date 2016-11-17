@@ -20,42 +20,50 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument(
-            '-d', '--directory', type=str,
-            help='path to directory')
+            '-d', '--destination', type=str,
+            help='path to template destination')
 
     def handle(self, *args, **options):
         tmp_dir = tempfile.gettempdir()
-        directory = os.path.abspath(options.get('directory'))
-        self.stdout.write(tmp_dir)
-        self.stdout.write(directory)
-        if not os.path.isdir(directory):
-            self.stderr.write('%s is not a valid directory' % directory)
+        destination = os.path.abspath(options.get('destination'))
+        self.stdout.write('Temp directory: %s' % tmp_dir)
+        self.stdout.write('Destination directory: %s' % destination)
+        if not os.path.isdir(destination):
+            self.stderr.write('%s is not a valid directory' % destination)
             sys.exit(1)
 
+        self.stdout.write('Getting package information from : %s' % GITHUB_API)
         response = requests.get(GITHUB_API)
         pkg_data = next(p for p in response.json()['assets'] if
                         p['name'].startswith('django'))
 
         tarball = os.path.join(tmp_dir, pkg_data['name'])
 
+        self.stdout.write('Getting tarball %s from : %s' %
+                          (tarball, pkg_data['browser_download_url']))
         urlretrieve(pkg_data['browser_download_url'], tarball)
 
         pkg_path = os.path.join(tmp_dir, 'django')
-        shutil.rmtree(pkg_path)
+        try:
+            shutil.rmtree(pkg_path)
+        except FileNotFoundError:
+            pass
 
+        self.stdout.write('Making directory: %s' % pkg_path)
         subprocess.check_call(['mkdir', 'django'], cwd=tmp_dir)
 
+        self.stdout.write('Untaring tarball: %s' % tarball)
         subprocess.check_call(['tar', '-xzf', tarball, '-C', 'django'],
                               cwd=tmp_dir)
 
-        template_path = os.path.join(pkg_path, 'govuk_template')
+        source_path = os.path.join(pkg_path, 'govuk_template')
 
-        subprocess.check_call(['rsync', '-r',
-                               os.path.join(template_path, 'static', ''),
-                               os.path.join(directory, 'static', '')])
-
-        subprocess.check_call(['rsync', '-r',
-                               os.path.join(template_path, 'templates', ''),
-                               os.path.join(directory, 'templates', '')])
+        for d in ['static', 'templates']:
+            self.stdout.write('rsync %s to %s' %
+                              (os.path.join(source_path, d, ''),
+                               os.path.join(destination, d, '')))
+            subprocess.check_call(['rsync', '-r',
+                                   os.path.join(source_path, d, ''),
+                                   os.path.join(destination, d, '')])
 
         shutil.rmtree(pkg_path)

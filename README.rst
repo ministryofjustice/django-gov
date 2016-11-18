@@ -7,17 +7,28 @@ This can be used as a base to build MoJ Django applications. It includes some us
 Includes
 ========
 
-Django
-django-cors-headers
-django-extended-choices
-django-filter
-django-moj-irat
-django-rest-swagger
-djangorestframework
-flake8
-openpyxl
-PyYAM
-requests
+`Django <https://pypi.python.org/pypi/django>`__
+
+`django-cors-headers <https://pypi.python.org/pypi/django-cors-headers>`__
+
+`django-extended-choices <https://pypi.python.org/pypi/django-extended-choices>`__
+
+`django-filter <https://pypi.python.org/pypi/django-filter>`__
+
+`django-moj-irat <https://pypi.python.org/pypi/django-moj-irat>`__
+
+`django-rest-swagger <https://pypi.python.org/pypi/django-rest-swagger>`__
+
+`djangorestframework <https://pypi.python.org/pypi/django-rest-framework>`__
+
+`flake8 <https://pypi.python.org/pypi/flake8>`__
+
+`openpyxl <https://pypi.python.org/pypi/openpyxl>`__
+
+`PyYAM <https://pypi.python.org/pypi/pyyaml>`__
+
+`requests <https://pypi.python.org/pypi/requests>`__
+
 
 Dependencies
 ============

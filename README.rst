@@ -59,7 +59,7 @@ govuk_template Django template and sstatic directory are included in the package
 This will add the templates and static directories from the latest release of govuk_template to the directory passed as -d
 
 
-You can include the default settings for all the included apps above by including the default settings in youe app settings.py file
+You can include the default settings for all the included apps above by including the default settings in your app settings.py file
 
 ::
 
@@ -71,5 +71,20 @@ You can include the urls for the healthcheck endpoints
 ::
 
     url(r'^', include('django_gov.urls'))
+
+
+Testing
+=======
+
+If you include the whole default settings, this will add flake8 code style tests to the directory you run your apps.
+
+You can add a `setup.cfg` file containing your flake8 settings to the base directory of your app.
+
+::
+
+    [flake8]
+    exclude = .git/,env/,venv/,node_modules/, manage.py
+    max-complexity = 10
+    max-line-length = 120
 
 

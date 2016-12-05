@@ -49,7 +49,14 @@ Install via pypi
 Features
 ========
 
-govuk_template Django template and sstatic directory are included in the package, you can also download the latest govuk_template taball and extract the contentents to a directory of you choice
+govuk_template Django template and static directory are included in the package. You can extend the GovUK Template directly
+
+::
+
+    {% extends 'govuk_template/base.html' %}
+
+
+You can also download the latest govuk_template taball and extract the contentents to a directory of you choice
 
 ::
 
@@ -88,3 +95,9 @@ You can add a `setup.cfg` file containing your flake8 settings to the base direc
     max-line-length = 120
 
 
+API Docs
+========
+
+django-rest-swagger is also included. The template has been modified to use the govuk_template as a base.
+
+see `https://github.com/marcgibbons/django-rest-swagger <https://github.com/marcgibbons/django-rest-swagger>`__ for instructions on how to set up Swagger

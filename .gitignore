@@ -1,2 +1,5 @@
 .idea
 *.pyc
+dist
+django_gov-gov*
+django_gov.egg*

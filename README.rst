@@ -1,4 +1,13 @@
-=======================
+DEPRECATED
+==========
+
+This repository is now deprecated in favour of using components in a more modular fashion.
+
+* `django-govuk-template <https://github.com/ministryofjustice/django-govuk-template>`__ – adds GOV.UK templates, CSS, JS and other components from GDS’s packages. It does not offer pre-built styles (which would require this package to be constantly updated), but allows projects to determine their own workflow
+* `django-govuk-forms <https://github.com/ministryofjustice/django-govuk-forms>`__ – allows Django forms to be output with the correct HTML to be styled by GOV.UK CSS
+* the packages listed below can be used in your Django project in the usual manner if needed
+
+
 Base Django App for MoJ
 =======================
 
@@ -25,7 +34,7 @@ Includes
 
 `openpyxl <https://pypi.python.org/pypi/openpyxl>`__
 
-`PyYAM <https://pypi.python.org/pypi/pyyaml>`__
+`PyYAML <https://pypi.python.org/pypi/pyyaml>`__
 
 `requests <https://pypi.python.org/pypi/requests>`__
 
